@@ -74,7 +74,8 @@ def pick(args):
         return f"No model matched task='{task}'" + (f" under ${max_cost}" if max_cost else "") + "."
     out = [f"Cheapest options for task='{task}' ({rows[0][1]}):"]
     for cost, unit, m in rows[:limit]:
-        out.append(f"- {m['name']} ({m.get('provider','')}) — ${cost:.4f} {unit} — {m.get('url','')}")
+        price = "FREE" if cost == 0 else f"${cost:.4f}"
+        out.append(f"- {m['name']} ({m.get('provider','')}) — {price} {unit} — {m.get('url','')}")
     out.append(f"\nFeed: {FEED}")
     return "\n".join(out)
 
@@ -101,6 +102,8 @@ def compare(args):
         c = text_cost(m, itok, otok)
         if c is None:
             out.append(f"- {m['name']}: no token pricing in feed")
+        elif c == 0:
+            out.append(f"- {m['name']} ({m.get('provider','')}): FREE")
         else:
             out.append(f"- {m['name']} ({m.get('provider','')}): ${c:.4f}")
     return "\n".join(out)
@@ -151,7 +154,7 @@ def main():
         mid, method, params = req.get("id"), req.get("method"), req.get("params") or {}
         if method == "initialize":
             reply(mid, {"protocolVersion": "2024-11-05", "capabilities": {"tools": {}},
-                        "serverInfo": {"name": "novai-router", "version": "0.1.0"}})
+                        "serverInfo": {"name": "novai-router", "version": "0.1.1"}})
         elif method == "tools/list":
             reply(mid, {"tools": TOOLS})
         elif method == "tools/call":

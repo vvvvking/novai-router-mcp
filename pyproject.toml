@@ -1,6 +1,6 @@
 [project]
 name = "novai-router-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "MCP server: pick the cheapest Chinese AI model for a workload shape (coding, agent, video, image)"
 readme = "README.md"
 requires-python = ">=3.9"
