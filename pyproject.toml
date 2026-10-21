@@ -1,0 +1,24 @@
+[project]
+name = "novai-router-mcp"
+version = "0.1.0"
+description = "MCP server: pick the cheapest Chinese AI model for a workload shape (coding, agent, video, image)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "NovAI", email = "support@aiapi-pro.com" }]
+keywords = ["mcp", "llm-router", "model-selection", "cost-optimization", "chinese-ai"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[project.urls]
+Homepage = "https://aiapi-pro.com"
+Repository = "https://github.com/vvvvking/novai-router-mcp"
+
+[project.scripts]
+novai-router-mcp = "server:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["server"]
