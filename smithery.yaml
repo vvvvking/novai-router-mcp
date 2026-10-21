@@ -1,0 +1,15 @@
+name: novai-router
+description: >-
+  Pick the cheapest Chinese AI model for a workload shape (coding, agent, chat, video, image),
+  with a budget ceiling, using a public live price feed. Also compares a shortlist at a given
+  input/output token volume. Routes on cost, not on quality claims.
+homepage: https://github.com/vvvvking/novai-router-mcp
+license: MIT
+runtime: python
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |-
+    (config) => ({ command: "python3", args: ["server.py"] })
