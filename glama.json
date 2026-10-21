@@ -1,0 +1,12 @@
+{
+  "name": "novai-router",
+  "description": "Pick the cheapest Chinese AI model for a workload shape (coding, agent, video, image) with a budget ceiling, or compare a shortlist at a given token volume.",
+  "repository": "https://github.com/vvvvking/novai-router-mcp",
+  "homepage": "https://aiapi-pro.com/?utm_source=glama&utm_medium=mcp_directory&utm_campaign=novai-router",
+  "license": "MIT",
+  "runtime": "python",
+  "command": "python3",
+  "args": ["server.py"],
+  "categories": ["developer-tools", "cost-optimization", "ai-infrastructure"],
+  "tags": ["mcp", "llm-router", "model-selection", "chinese-ai"]
+}
