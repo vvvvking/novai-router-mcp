@@ -1,3 +1,5 @@
+<!-- mcp-name: io.github.vvvvking/novai-router-mcp -->
+
 # novai-router-mcp
 
 An MCP server that answers: **for this workload, which Chinese model should I call, and what will it cost?**
